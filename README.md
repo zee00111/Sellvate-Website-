@@ -24,7 +24,7 @@ This SEO-friendly and visually stunning template is designed to revolutionize yo
 1. **Clone Repository**:
 
    ```bash
-   git clone https://github.com/mohitchandel/saas-landing-page.git
+https://github.com/zee00111/Sellvate-Website-.git
    ```
 
 2. **Install Dependencies**:
@@ -56,7 +56,7 @@ If you find this template helpful and would like to support its development, con
 
 ---
 
-**Made with ❤️ by Mohit**
+**Made with ❤️ by Zain Qureshi**
 =======
 # Sellvate-Website-
 >>>>>>> 5c9b69daa23f3e9e0a18d1d0c195b66c30e20504
