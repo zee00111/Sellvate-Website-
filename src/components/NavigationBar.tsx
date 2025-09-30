@@ -31,7 +31,7 @@ export const NavigationBar = () => {
       variants={navVariants}
       className="border-gray-200 container mx-auto"
     >
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-gradient-to-r from-orange-500 h-20 w-full to-orange-600 text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -70,7 +70,7 @@ export const NavigationBar = () => {
           </div>
            <a className="orange-outline text-xl p-0 flex items-center gap-2" style={{background: 'transparent', border: 'none'}}>
              <img src="/sellvate.png" alt="Sellvate Logo" width={80} height={80} style={{borderRadius: '10px'}} />
-             <span className="font-bold text-orange-500">SELLVATE</span>
+             {/* <span className="font-bold text-orange-500">SELLVATE</span> */}
            </a>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -91,7 +91,7 @@ export const NavigationBar = () => {
         </div>
         <div className="navbar-end gap-2">
           {/* <a className="btn btn-orange-outline btn-sm">SignUp</a> */}
-          <a className="btn btn-orange btn-sm">Get Started</a>
+          <a className="btn btn-orange-outline btn-sm">Get Started</a>
         </div>
       </div>
     </motion.nav>

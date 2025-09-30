@@ -1,102 +1,190 @@
+'use client';
+
 import Image from "next/image";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
-export default function Service() {
+export default function Services() {
+  // State to track which service's details are expanded
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  // Function to toggle details for a specific service
+  const toggleDetails = (serviceTitle: string) => {
+    setExpanded((prev) => ({
+      ...prev,
+      [serviceTitle]: !prev[serviceTitle],
+    }));
+  };
+
+  // Array of services with titles, descriptions, details, prices, and icons
+  const services = [
+    {
+      title: "Full-Service Management",
+      description: "Complete Amazon business management with dedicated support across all channels.",
+      details:
+        "Our full-service package covers every aspect of your Amazon operation, from account setup to performance optimization, with 24/7 expert support.",
+      price: "Starting at $1,200/month",
+      icon: "https://img.icons8.com/ios-filled/100/f97316/combo-chart.png",
+    },
+    {
+      title: "Amazon Advertising Management",
+      description: "Expert PPC management for unprecedented growth and optimized ad spend.",
+      details:
+        "Leverage our PPC expertise to maximize ROI with targeted campaigns, keyword optimization, and ad performance tracking.",
+      price: "Starting at $900/month",
+      icon: "https://img.icons8.com/ios-filled/100/f97316/gear.png",
+    },
+    {
+      title: "Demand-Side Platform (DSP) Advertising",
+      description: "Advanced DSP solutions for maximum control, higher margins, and invaluable data.",
+      details:
+        "Unlock premium ad placements across Amazon and beyond with our DSP services, tailored for large-scale advertisers with a $15,000 minimum ad spend.",
+      price: "10% of ad spend ($15,000 minimum)",
+      icon: "https://img.icons8.com/ios-filled/100/f97316/database.png",
+    },
+    {
+      title: "Search Engine Optimization (SEO)",
+      description: "Advanced solutions for boosting your Amazon search rankings.",
+      details:
+        "Enhance your product visibility with our SEO strategies, including keyword research, listing optimization, and competitor analysis.",
+      price: "Starting at $700/month",
+      icon: "https://img.icons8.com/ios-filled/100/f97316/search.png",
+    },
+    {
+      title: "Compliance & Troubleshooting",
+      description: "Ensure compliance and resolve issues with expert troubleshooting.",
+      details:
+        "Stay ahead of Amazon policies with our compliance checks and resolve technical or account issues swiftly with our dedicated team.",
+      price: "Starting at $500/month",
+      icon: "https://img.icons8.com/ios-filled/100/f97316/settings.png",
+    },
+    {
+      title: "Design & Creative Services",
+      description: "Elevate your brand with professional design and creative content.",
+      details:
+        "From stunning product images to A+ content and branding, our creative team crafts visuals that convert and engage.",
+      price: "Starting at $600/month",
+      icon: "https://img.icons8.com/ios-filled/100/f97316/paint-brush.png",
+    },
+  ];
+
   return (
-    <main className="min-h-screen bg-white text-gray-900">
-      <section className="py-20 text-center">
-        <Image src="/sellvate.png" alt="Sellvate Logo" width={100} height={100} className="mx-auto mb-6" />
-        <h1 className="text-5xl font-bold text-orange-500 mb-4">Our Services</h1>
-        <p className="max-w-2xl mx-auto text-lg text-gray-700">
-          Sellvate offers a full suite of Amazon seller services, from marketing and analytics to creative content and support. Discover how we help you grow and succeed on Amazon.
-        </p>
-      </section>
-      <section className="py-16 bg-orange-50">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-3xl font-bold text-orange-500 mb-3">Amazon Marketing</h2>
-            <p className="text-gray-700 mb-4">Boost your visibility and sales with expert Amazon PPC, SEO, and sponsored ads management.</p>
-            <ul className="list-disc pl-5 text-gray-700">
-              <li>PPC Campaigns</li>
-              <li>SEO Optimization</li>
-              <li>Sponsored Ads</li>
-            </ul>
-          </div>
-          <div>
-            <Image src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Marketing" width={400} height={300} className="rounded-lg shadow-lg" />
-          </div>
-        </div>
-      </section>
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <Image src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Analytics" width={400} height={300} className="rounded-lg shadow-lg" />
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold text-orange-500 mb-3">Analytics & Growth</h2>
-            <p className="text-gray-700 mb-4">Track your performance and make data-driven decisions with our advanced analytics and reporting tools.</p>
-            <ul className="list-disc pl-5 text-gray-700">
-              <li>Sales Analytics</li>
-              <li>Growth Strategies</li>
-              <li>Custom Reports</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section className="py-16 bg-orange-50">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-3xl font-bold text-orange-500 mb-3">Creative Content</h2>
-            <p className="text-gray-700 mb-4">Stand out with professional product photography, A+ content, and engaging brand design.</p>
-            <ul className="list-disc pl-5 text-gray-700">
-              <li>Product Photography</li>
-              <li>A+ Content</li>
-              <li>Brand Design</li>
-            </ul>
-          </div>
-          <div>
-            <Image src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Content" width={400} height={300} className="rounded-lg shadow-lg" />
-          </div>
-        </div>
-      </section>
-      <section className="py-16">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-orange-500 mb-3">Ready to Grow?</h2>
-          <p className="text-gray-700 mb-6">Contact Sellvate today and let us help you achieve your Amazon goals.</p>
-          <a href="/contact" className="btn btn-orange text-lg">Contact Us</a>
+    <main className="min-h-screen  text-white">
+      {/* Hero Section */}
+      <section className="relative py-28 text-center overflow-hidden">
+        <div className="absolute inset-0 blur-3xl" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4">
+          <Image
+            src="/sellvate.png"
+            alt="Sellvate Logo"
+            width={140}
+            height={140}
+            className="mx-auto mb-8 opacity-90"
+          />
+           <motion.h2
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7 }}
+                className="mt-5 text-6xl leading-2 text-gray-900 sm:leading-tight md:text-6xl lg:text-6xl  font-poppins font-bold"
+              >
+              
+                <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 inline-block text-transparent bg-clip-text">
+                Our Expert Services
+                </span>
+              </motion.h2>
+          <p className="text-lg md:text-xl text-gray-900 max-w-3xl mx-auto leading-relaxed">
+            Unlock your Amazon potential with Sellvate’s specialized services, designed to drive growth,
+            optimize performance, and enhance your brand presence.
+          </p>
         </div>
       </section>
 
-      <section className="py-16 bg-orange-50">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <h2 className="text-3xl font-bold text-orange-500 mb-3">Seller Support</h2>
-            <p className="text-gray-700 mb-4">Our dedicated support team is here to help you with every aspect of your Amazon journey, from setup to scaling.</p>
-            <ul className="list-disc pl-5 text-gray-700">
-              <li>Account Setup</li>
-              <li>Listing Optimization</li>
-              <li>Performance Troubleshooting</li>
-            </ul>
-          </div>
-          <div>
-            <Image src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Support" width={400} height={300} className="rounded-lg shadow-lg" />
+      {/* Services Grid Section */}
+      <section className="py-16 md:py-20 bg-gradient-to-t from-gray-900 to-gray-950">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-orange-400 mb-10 md:mb-12 text-center">
+            Discover Our Offerings
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service) => {
+              const isOpen = !!expanded[service.title];
+              return (
+                <motion.div
+                  key={service.title}
+                  layout
+                  className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-orange-700/20 transition-all duration-300 border border-gray-700/60"
+                  whileHover={{ y: -2 }}
+                >
+                  <div className="flex justify-center mb-4">
+                    <Image
+                      src={service.icon}
+                      alt={`${service.title} Icon`}
+                      width={60}
+                      height={60}
+                      className="transition-transform duration-300"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3 text-center">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-400 mb-5 text-center leading-relaxed">
+                    {service.description}
+                  </p>
+                  <button
+                    onClick={() => toggleDetails(service.title)}
+                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full bg-orange
+                    text-orange-300 hover:bg-orange-900/50 hover:text-orange-600 transition-colors duration-200"
+                    aria-expanded={isOpen}
+                    aria-controls={`details-${service.title}`}
+                  >
+                    <span className="font-semibold">{isOpen ? "Hide Details" : "Learn More"}</span>
+                    <motion.span
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      ➔
+                    </motion.span>
+                  </button>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        id={`details-${service.title}`}
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="mt-4 overflow-hidden"
+                      >
+                        <div className="p-4 bg-gray-700/70 rounded-lg text-gray-200 border border-gray-600/60">
+                          <p className="mb-2">{service.details}</p>
+                          <p className="text-orange-400 font-semibold">{service.price}</p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <Image src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Strategy" width={400} height={300} className="rounded-lg shadow-lg" />
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold text-orange-500 mb-3">Strategy & Consulting</h2>
-            <p className="text-gray-700 mb-4">Get expert advice and strategic planning to maximize your Amazon business growth and profitability.</p>
-            <ul className="list-disc pl-5 text-gray-700">
-              <li>Business Planning</li>
-              <li>Market Research</li>
-              <li>Growth Consulting</li>
-            </ul>
-          </div>
+      {/* CTA Section */}
+      <section className="py-20 text-center bg-gradient-to-t from-gray-900 to-gray-950">
+        <div className="max-w-3xl mx-auto px-4">
+          <h2 className="text-4xl font-bold text-orange-400 mb-6">
+            Ready to Elevate Your Amazon Business?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            Let’s tailor a solution for your success. Contact us today for a free consultation!
+          </p>
+          <a
+            href="/contact"
+            className="inline-block px-10 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg text-lg"
+          >
+            Get Started Now
+          </a>
         </div>
       </section>
     </main>

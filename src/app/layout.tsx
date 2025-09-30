@@ -2,6 +2,14 @@ import "./globals.css";
 import { NavigationBar } from "@/components/NavigationBar";
 import { Footer } from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -9,9 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html data-theme="light" lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-      </head>
+      <head></head>
       <body className={""}>
         <NavigationBar />
         {children}

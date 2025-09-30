@@ -1,9 +1,9 @@
 import { HeroSection } from "@/components/Content/HeroSection";
 import { ClientsSection } from "@/components/Content/Clients";
-import { ContactUs } from "@/components/Content/ContactUs";
+// import { ContactUs } from "@/components/Content/ContactUs";
 import { Features } from "@/components/Content/Features";
 import { HowItWork } from "@/components/Content/HowItWork";
-import { Pricing } from "@/components/Content/Pricing";
+// import { Pricing } from "@/components/Content/Pricing";
 import { Testimonials } from "@/components/Content/Testimonials";
 import type { Metadata } from "next";
 
@@ -21,7 +21,7 @@ export default function Home() {
       <HowItWork />
       {/* <Pricing /> */}
       <Testimonials />
-      <ContactUs />
+      {/* <ContactUs /> */}
     </main>
   );
 }

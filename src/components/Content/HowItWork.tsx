@@ -43,10 +43,10 @@ const pathVariants = {
 };
 
 const iconVariants = {
-  hidden: { scale: 0, rotate: -180 },
+  hidden: { scale: 0, rotate: 280 },
   visible: {
     scale: 1,
-    rotate: 0,
+    rotate: 2,
     transition: {
       duration: 0.5,
       ease: "easeOut"
@@ -85,13 +85,13 @@ export const HowItWork = () => {
 
         <div className="relative mt-12 lg:mt-20">
           {/* Curved SVG Path for chain-like animation */}
-          <svg className="absolute inset-x-0 hidden md:block top-2 md:px-20 lg:px-28 w-full h-32" viewBox="0 0 800 100" preserveAspectRatio="none">
+          <svg className="absolute inset-x-0 hidden md:block top-0 md:px-20 lg:px-28 w-full h-28" viewBox="0 0 800 100" preserveAspectRatio="none">
             <motion.path
-              d="M0 50 Q 200 -50 400 50 Q 600 150 800 50"
+              d="M0 40 Q 200 -40 400 40 Q 600 140 800 40"
               fill="none"
               stroke="rgba(255, 255, 255, 0.5)"
-              strokeWidth="4"
-              strokeDasharray="5,5"
+              strokeWidth="2"
+              strokeDasharray="5,10"
               variants={pathVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -178,7 +178,7 @@ export const HowItWork = () => {
               <motion.p 
                 className="mt-4 text-base"
                 initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 1 } : {}}
+                animate={isInView ? { opacity: 20 } : {}}
                 transition={{ duration: 0.5, delay: 1.0 }}
               >
                 Deploy targeted PPC campaigns, track performance with advanced analytics, and scale for maximum ROI.

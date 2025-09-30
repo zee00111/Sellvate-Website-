@@ -64,7 +64,7 @@ export const Features = () => {
             initial={{ opacity: 0, scale: 0.9, y: -30 }}
             animate={hasAnimated ? { opacity: 1, scale: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-5xl font-extrabold mb-6 tracking-wide drop-shadow-lg"
+            className="text-4xl text-black font-extrabold mb-6 tracking-wide drop-shadow-lg"
           >
             Elevate Your Amazon Empire with Sellvate
           </motion.h2>
@@ -72,7 +72,7 @@ export const Features = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-xl max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-black max-w-3xl mx-auto leading-relaxed"
           >
             Unleash explosive growth, streamline operations, and dominate the marketplace with our cutting-edge Amazon services tailored for visionary sellers.
           </motion.p>
