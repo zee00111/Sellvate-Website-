@@ -29,9 +29,9 @@ export const NavigationBar = () => {
       initial="hidden"
       animate="visible"
       variants={navVariants}
-      className="border-gray-200 container mx-auto"
+      className="border-gray-200 w-full"
     >
-      <div className="navbar bg-gradient-to-r from-orange-500 h-20 w-full to-orange-600 text-white">
+      <div className="navbar bg-gradient-to-r from-orange-500 h-16 w-full to-orange-600 text-white">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -52,14 +52,15 @@ export const NavigationBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-orange-600 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               <li>
                 <a href="/">Home</a>
+              
+              </li>
               <li>
-                <Link href="/contact">Contact</Link>
-              </li>
-              </li>
+              <a href="/service">Service</a>
+            </li>
               <li>
                 <a href="/about">About</a>
               </li>
@@ -68,12 +69,12 @@ export const NavigationBar = () => {
               </li>
             </ul>
           </div>
-           <a className="orange-outline text-xl p-0 flex items-center gap-2" style={{background: 'transparent', border: 'none'}}>
-             <img src="/sellvate.png" alt="Sellvate Logo" width={80} height={80} style={{borderRadius: '10px'}} />
+           <Link href="/" className="orange-outline text-xl p-0 flex items-center gap-2" style={{background: 'transparent', border: 'none'}}>
+             <img src="/sellvate.png" alt="Sellvate Logo " width={70} height={70} style={{borderRadius: '10px'}} />
              {/* <span className="font-bold text-orange-500">SELLVATE</span> */}
-           </a>
+           </Link>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal px-1">
             <li>
               <a href="/">Home</a>

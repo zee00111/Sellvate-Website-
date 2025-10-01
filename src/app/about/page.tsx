@@ -1,3 +1,5 @@
+'use client';
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function About() {
@@ -5,10 +7,21 @@ export default function About() {
     <main className="min-h-screen bg-gradient-to-b from-white to-orange-50 text-gray-900">
       {/* Hero Section */}
       <section className="relative py-32 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-orange-100 opacity-50 blur-3xl"></div>
+        <div className="absolute inset-0 "></div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <Image src="/sellvate.png" alt="Sellvate Logo" width={150} height={150} className="mx-auto mb-8 animate-pulse" />
-          <h1 className="text-6xl font-extrabold text-orange-600 mb-6 tracking-tight">Discover Sellvate</h1>
+          <motion.h2
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7 }}
+                className="mt-5 text-6xl leading-2 text-gray-900 sm:leading-tight md:text-6xl lg:text-6xl  font-poppins font-bold"
+              >
+              
+                <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 inline-block text-transparent bg-clip-text">
+                About us
+                </span>
+              </motion.h2>
+              <br />
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             At Sellvate, we're more than just a service – we're your dedicated ally in conquering the Amazon marketplace. Born from real-world seller struggles and triumphs, we blend cutting-edge tech, creative flair, and data smarts to turn your Amazon dreams into reality. Whether you're a solo entrepreneur or scaling a brand, we're here to elevate your game.
           </p>
@@ -150,10 +163,10 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 text-center bg-gradient-to-t from-orange-200 to-orange-100">
+      <section className="py-20 text-center bg-gradient-to-t from-gray-900 to-gray-950">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold text-orange-600 mb-6">Ready to Elevate Your Amazon Game?</h2>
-          <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+          <h2 className="text-4xl font-bold text-orange-400 mb-6">Ready to Elevate Your Amazon Game?</h2>
+          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
             Join the Sellvate family and watch your business soar. Let's chat about how we can tailor our expertise to your unique needs.
           </p>
           <a href="/contact" className="inline-block px-10 py-4 bg-orange-500 text-white font-bold rounded-full hover:bg-orange-600 transition-colors duration-300 text-lg shadow-md">

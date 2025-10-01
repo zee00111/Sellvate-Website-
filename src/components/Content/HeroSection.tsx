@@ -51,7 +51,7 @@ export const HeroSection = () => {
                 className="badge py-4 badge-neutral text-poppins"
               >
                 <RocketIcon className="text-primary-content" size={"18"} />{" "}
-                &nbsp; Maximize Your Amazon Success with Expert Digital Marketing
+                &nbsp;Your Amazon Sales Rocket Fuel: Data-Powered Digital Marketing Strategies
               </motion.div>
               <motion.h2
                 initial={{ opacity: 0, scale: 0.5 }}

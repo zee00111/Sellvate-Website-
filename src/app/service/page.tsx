@@ -92,6 +92,7 @@ export default function Services() {
                 Our Expert Services
                 </span>
               </motion.h2>
+              <br />
           <p className="text-lg md:text-xl text-gray-900 max-w-3xl mx-auto leading-relaxed">
             Unlock your Amazon potential with Sellvate’s specialized services, designed to drive growth,
             optimize performance, and enhance your brand presence.

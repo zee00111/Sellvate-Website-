@@ -1,11 +1,16 @@
+'use client';
+
 import Image from "next/image";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
 
 export default function Contact() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-orange-50 text-gray-900">
       {/* Hero Section */}
       <section className="relative py-32 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-orange-100 opacity-40 blur-3xl"></div>
+        <div className="absolute inset-0 "></div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <Image
             src="/sellvate.png"
@@ -14,9 +19,18 @@ export default function Contact() {
             height={120}
             className="mx-auto mb-8 animate-pulse transition-transform duration-300 hover:scale-110"
           />
-          <h1 className="text-6xl font-extrabold text-orange-600 mb-6 tracking-tight">
-            Connect with Sellvate
-          </h1>
+          <motion.h2
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7 }}
+                className="mt-5 text-6xl leading-2 text-gray-900 sm:leading-tight md:text-6xl lg:text-6xl  font-poppins font-bold"
+              >
+              
+                <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 inline-block text-transparent bg-clip-text">
+                Connect with Sellvate
+                </span>
+              </motion.h2>
+          <br />
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
             Ready to supercharge your Amazon journey? Reach out to our dedicated team for tailored support, strategic insights, or exciting partnership opportunities. We're here to fuel your success!
           </p>
