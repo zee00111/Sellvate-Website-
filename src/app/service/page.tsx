@@ -85,7 +85,7 @@ export default function Services() {
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7 }}
-                className="mt-5 text-6xl leading-2 text-gray-900 sm:leading-tight md:text-6xl lg:text-6xl  font-poppins font-bold"
+                className="mt-5 text-6xl leading-2 text-gray-900 dark:text-white sm:leading-tight md:text-6xl lg:text-6xl  font-poppins font-bold"
               >
               
                 <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 inline-block text-transparent bg-clip-text">
@@ -93,7 +93,7 @@ export default function Services() {
                 </span>
               </motion.h2>
               <br />
-          <p className="text-lg md:text-xl text-gray-900 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-900 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Unlock your Amazon potential with Sellvate’s specialized services, designed to drive growth,
             optimize performance, and enhance your brand presence.
           </p>
@@ -113,7 +113,7 @@ export default function Services() {
                 <motion.div
                   key={service.title}
                   layout
-                  className="bg-gray-800/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-orange-700/20 transition-all duration-300 border border-gray-700/60"
+                  className="bg-gray-800/80 dark:bg-[var(--card)] backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-orange-700/20 transition-all duration-300 border border-gray-700/60 dark:border-[var(--card-border)]"
                   whileHover={{ y: -2 }}
                 >
                   <div className="flex justify-center mb-4">
@@ -125,10 +125,10 @@ export default function Services() {
                       className="transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-3 text-center">
+                  <h3 className="text-2xl font-bold text-white dark:text-gray-100 mb-3 text-center">
                     {service.title}
                   </h3>
-                  <p className="text-gray-400 mb-5 text-center leading-relaxed">
+                  <p className="text-gray-400 dark:text-gray-300 mb-5 text-center leading-relaxed">
                     {service.description}
                   </p>
                   <button
@@ -157,7 +157,7 @@ export default function Services() {
                         transition={{ duration: 0.25 }}
                         className="mt-4 overflow-hidden"
                       >
-                        <div className="p-4 bg-gray-700/70 rounded-lg text-gray-200 border border-gray-600/60">
+                        <div className="p-4 bg-gray-700/70 dark:bg-[var(--card)] rounded-lg text-gray-200 dark:text-gray-300 border border-gray-600/60 dark:border-[var(--card-border)]">
                           <p className="mb-2">{service.details}</p>
                           <p className="text-orange-400 font-semibold">{service.price}</p>
                         </div>

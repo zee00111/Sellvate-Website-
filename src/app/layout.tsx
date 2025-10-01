@@ -5,9 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  icons: {
-    icon: "/favicon.ico",
-  },
+  icons: { icon: '/favicon.ico' } // or '/favicon.png'
 };
 
 export default function RootLayout({
@@ -16,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html data-theme="light" lang="en">
+    <html lang="en">
       <head></head>
       <body className={""}>
         <NavigationBar />

@@ -50,12 +50,12 @@ export const Testimonials = () => {
   ];
 
   return (
-    <section ref={ref} className="py-28 bg-gradient-to-br from-orange-50 to-amber-100/60">
+    <section ref={ref} className="py-28 bg-gradient-to-br from-orange-50 to-amber-100/60 dark:from-[#0d1117] dark:to-[#0b0f14]">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex flex-col items-center">
           <animated.div style={springProps}>
             <div className="text-center">
-              <p className="text-lg font-medium text-orange-700 font-pj">
+              <p className="text-lg font-medium text-orange-700 dark:text-orange-400 font-pj">
                 Hear From Our Satisfied Amazon Sellers
               </p>
               <h2 className="font-poppins mt-4 text-3xl font-bold sm:text-4xl xl:text-5xl">
@@ -69,7 +69,7 @@ export const Testimonials = () => {
               <Link
                 href="#"
                 title=""
-                className="pb-2 text-base font-bold leading-7 text-orange-700 transition-all duration-200 border-b-2 border-orange-400/70 hover:border-orange-500 font-pj focus:outline-none focus:ring-1 focus:ring-orange-400 focus:ring-offset-2 hover:text-orange-800"
+                className="pb-2 text-base font-bold leading-7 text-orange-700 dark:text-orange-300 transition-all duration-200 border-b-2 border-orange-400/70 hover:border-orange-500 font-pj focus:outline-none focus:ring-1 focus:ring-orange-400 focus:ring-offset-2 hover:text-orange-800"
               >
                 Check all 1,500+ reviews
               </Link>
@@ -106,7 +106,7 @@ export const Testimonials = () => {
                     key={index}
                     style={cardSpring}
                     onClick={() => setExpandedIndex(isExpanded ? null : index)}
-                    className="flex flex-col overflow-hidden cursor-pointer rounded-xl bg-white border border-orange-100 hover:border-orange-200 transition-colors"
+                    className="flex flex-col overflow-hidden cursor-pointer rounded-xl bg-white dark:bg-[var(--card)] border border-orange-100 dark:border-[var(--card-border)] transition-colors"
                   >
                     <div className="flex flex-col justify-between flex-1 p-6 lg:py-8 lg:px-7">
                       <div className="flex-1">
@@ -123,7 +123,7 @@ export const Testimonials = () => {
                         {transitions((styles, item) =>
                           item === index ? (
                             <animated.blockquote style={styles} className="flex-1 mt-8">
-                              <p className="text-lg leading-relaxed text-neutral font-pj">
+                              <p className="text-lg leading-relaxed text-neutral dark:text-gray-300 font-pj">
                                 {testimonial.quote}
                               </p>
                             </animated.blockquote>
@@ -138,10 +138,10 @@ export const Testimonials = () => {
                           alt=""
                         />
                         <div className="ml-4">
-                          <p className="text-base font-bold text-neutral font-pj">
+                          <p className="text-base font-bold text-neutral dark:text-gray-100 font-pj">
                             {testimonial.name}
                           </p>
-                          <p className="mt-0.5 text-sm font-pj text-gray-600">
+                          <p className="mt-0.5 text-sm font-pj text-gray-600 dark:text-gray-400">
                             {testimonial.role}
                           </p>
                         </div>
@@ -154,10 +154,10 @@ export const Testimonials = () => {
           </div>
 
           <div className="mt-16 md:mt-24 text-center">
-            <h3 className="text-2xl font-bold text-neutral mb-4">
+            <h3 className="text-2xl font-bold text-neutral dark:text-gray-100 mb-4">
               Ready to see results like these?
             </h3>
-            <p className="text-gray-700 max-w-2xl mx-auto mb-6">
+            <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-6">
               Let’s talk about your goals and map out a tailored plan for your Amazon growth.
             </p>
             <Link

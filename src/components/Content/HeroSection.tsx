@@ -51,13 +51,13 @@ export const HeroSection = () => {
                 className="badge py-4 badge-neutral text-poppins"
               >
                 <RocketIcon className="text-primary-content" size={"18"} />{" "}
-                &nbsp;Your Amazon Sales Rocket Fuel: Data-Powered Digital Marketing Strategies
+                &nbsp; Maximize Your Amazon Success with Expert Digital Marketing
               </motion.div>
               <motion.h2
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.7 }}
-                className="mt-5 text-6xl leading-2 text-gray-900 sm:leading-tight md:text-6xl lg:text-6xl  font-poppins font-bold"
+                className="mt-5 text-6xl leading-2 text-gray-900 dark:text-white sm:leading-tight md:text-6xl lg:text-6xl  font-poppins font-bold"
               >
                 Unlock Your Amazon Potential<br />
                 <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 inline-block text-transparent bg-clip-text">
@@ -92,7 +92,7 @@ export const HeroSection = () => {
                 transition={{ duration: 0.7 }}
                 className="mt-8"
               >
-                <p className="mb-4 text-center text-base font-medium text-black">
+                <p className="mb-4 text-center text-base font-medium text-black dark:text-gray-300">
                   Trusted by Amazon Sellers Worldwide
                 </p>
                 <div
@@ -101,35 +101,35 @@ export const HeroSection = () => {
                 >
                   <Link
                     href="#"
-                    className="text-black duration-300 ease-in-out "
+                    className="text-black dark:text-gray-300 duration-300 ease-in-out "
                     target="_blank"
                   >
                     <GitHubLogo fill="none" height={26} width={30} />
                   </Link>
                   <Link
                     href="#"
-                    className="text-black duration-300 ease-in-out "
+                    className="text-black dark:text-gray-300 duration-300 ease-in-out "
                     target="_blank"
                   >
                     <LinearLogo fill="#5E6AD2" height={32} width={32} />
                   </Link>
                   <Link
                     href="#"
-                    className="text-black duration-300 ease-in-out "
+                    className="text-black dark:text-gray-300 duration-300 ease-in-out "
                     target="_blank"
                   >
                     <FigmaLogo fill="none" height={32} width={32} />
                   </Link>
                   <Link
                     href="#"
-                    className="text-black duration-300 ease-in-out "
+                    className="text-black dark:text-gray-300 duration-300 ease-in-out "
                     target="_blank"
                   >
                     <MainChimpLogo fill="none" height={32} width={32} />
                   </Link>
                   <Link
                     href="#"
-                    className="text-black duration-300 ease-in-out "
+                    className="text-black dark:text-gray-300 duration-300 ease-in-out "
                     target="_blank"
                   >
                     <NotionLogo fill="none" height={32} width={32} />
@@ -168,7 +168,7 @@ export function GridPattern({
   return (
     <svg
       aria-hidden="true"
-      className="pointer-events-none absolute inset-0 h-full w-full fill-orange-100 stroke-orange-200"
+      className="pointer-events-none absolute inset-0 h-full w-full fill-orange-100 dark:fill-[#141a22] stroke-orange-200 dark:stroke-[#1f2a36]"
       {...props}
     >
       <defs>
@@ -183,7 +183,6 @@ export function GridPattern({
         <path
         d={`M.5 ${height}V.5H${width}`}
         fill="none"
-        // stroke="orange"
         strokeDasharray={strokeDasharray}
         />
       </pattern>
@@ -205,22 +204,6 @@ export function GridPattern({
       fill={`url(#${id})`}
       mask="url(#maskGradient)"
       />
-
-      {/* {squares && (
-      <svg x={x} y={y} className="overflow-visible">
-        {squares.map(([x, y]) => (
-        <rect
-          strokeWidth="0"
-          key={`${x}-${y}`}
-          width={width - 1}
-          height={height - 1}
-          x={x * width + 1}
-          y={y * height + 1}
-          fill="orange"
-        />
-        ))}
-      </svg>
-      )} */}
     </svg>
   );
 }
