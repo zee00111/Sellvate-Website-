@@ -1,12 +1,14 @@
 'use client';
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function About() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-orange-50 dark:from-[#0d1117] dark:to-[#0b0f14] text-gray-900 dark:text-gray-100">
+    <main className=" min-h-screen bg-gradient-to-b from-white to-orange-50 dark:from-[#0d1117] dark:to-[#0b0f14] text-gray-900 dark:text-gray-100" >
       {/* Hero Section */}
-      <section className="relative py-32 text-center overflow-hidden">
+      <section className="relative py-32 text-center overflow-hidden" data-aos="fade-up">
         <div className="absolute inset-0 "></div>
         <div className="relative z-10 max-w-4xl mx-auto">
           <Image src="/sellvate.png" alt="Sellvate Logo" width={150} height={150} className="mx-auto mb-8 animate-pulse" />
@@ -22,7 +24,7 @@ export default function About() {
                 </span>
               </motion.h2>
               <br />
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
             At Sellvate, we're more than just a service – we're your dedicated ally in conquering the Amazon marketplace. Born from real-world seller struggles and triumphs, we blend cutting-edge tech, creative flair, and data smarts to turn your Amazon dreams into reality. Whether you're a solo entrepreneur or scaling a brand, we're here to elevate your game.
           </p>
         </div>
@@ -31,9 +33,9 @@ export default function About() {
       {/* Our Story Section - Modern Card Layout */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-12 text-center">Our Journey: From Sellers to Game-Changers</h2>
+          <h2 className="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-12 text-center" data-aos="fade-up">Our Journey: From Sellers to Game-Changers</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            <div className="bg-white dark:bg-[var(--card)] p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-transparent dark:border-[var(--card-border)]">
+            <div className="bg-white dark:bg-[var(--card)] p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-transparent dark:border-[var(--card-border)]" data-aos="fade-up" data-aos-delay="100">
               <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                 Sellvate started in a garage with a simple idea: Amazon sellers deserve better tools and support. Our founders, seasoned e-commerce pros who battled the same listing woes and ad frustrations you face, decided to flip the script. Today, we're a vibrant team helping thousands navigate Amazon's twists and turns with strategies that actually work – because we've been there.
               </p>
@@ -58,6 +60,7 @@ export default function About() {
               width={600} 
               height={400} 
               className="rounded-2xl shadow-xl object-cover transform hover:scale-105 transition-transform duration-300" 
+              data-aos="fade-up" data-aos-delay="200"
             />
           </div>
         </div>
@@ -66,7 +69,7 @@ export default function About() {
       {/* Why Choose Us - Alternating Layout with Animations */}
       <section className="py-20 bg-orange-50 dark:bg-[#0f141b]">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-12 text-center">Why Sellers Love Partnering with Sellvate</h2>
+          <h2 className="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-12 text-center" data-aos="fade-up">Why Sellers Love Partnering with Sellvate</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <Image 
               src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" 
@@ -74,8 +77,9 @@ export default function About() {
               width={600} 
               height={400} 
               className="rounded-2xl shadow-xl object-cover transform hover:scale-105 transition-transform duration-300" 
+              data-aos="fade-up" data-aos-delay="100"
             />
-            <div className="bg-white dark:bg-[var(--card)] p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-transparent dark:border-[var(--card-border)]">
+            <div className="bg-white dark:bg-[var(--card)] p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-transparent dark:border-[var(--card-border)]" data-aos="fade-up" data-aos-delay="200">
               <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                 In a sea of generic agencies, Sellvate stands out by treating your business like our own. We dive deep into your unique challenges, crafting personalized plans that deliver tangible growth. No cookie-cutter approaches here – just honest, innovative solutions backed by data and a genuine passion for your success.
               </p>
@@ -101,9 +105,9 @@ export default function About() {
       {/* Innovation Section - Modern with Gradients */}
       <section className="py-20">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-12 text-center">Innovation: The Heart of Sellvate</h2>
+          <h2 className="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-12 text-center" data-aos="fade-up">Innovation: The Heart of Sellvate</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="bg-gradient-to-r from-orange-100 to-orange-200 dark:from-[#101826] dark:to-[#0f1720] p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
+            <div className="bg-gradient-to-r from-orange-100 to-orange-200 dark:from-[#101826] dark:to-[#0f1720] p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
               <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                 We're obsessed with staying ahead in the fast-paced world of e-commerce. By harnessing AI, machine learning, and creative storytelling, we ensure your Amazon presence isn't just competitive – it's revolutionary. Our team thrives on turning emerging trends into your unfair advantage.
               </p>
@@ -125,6 +129,7 @@ export default function About() {
               width={600} 
               height={400} 
               className="rounded-2xl shadow-xl object-cover transform hover:scale-105 transition-transform duration-300" 
+              data-aos="fade-up" data-aos-delay="200"
             />
           </div>
         </div>
@@ -133,7 +138,7 @@ export default function About() {
       {/* Meet the Team Section */}
       <section className="py-20 bg-orange-50 dark:bg-[#0f141b]">
         <div className="max-w-5xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-12 text-center">Meet the Sellvate Squad</h2>
+          <h2 className="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-12 text-center" data-aos="fade-up">Meet the Sellvate Squad</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <Image 
               src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=600&q=80" 
@@ -141,8 +146,9 @@ export default function About() {
               width={600} 
               height={400} 
               className="rounded-2xl shadow-xl object-cover transform hover:scale-105 transition-transform duration-300" 
+              data-aos="fade-up" data-aos-delay="100"
             />
-            <div className="bg-white dark:bg-[var(--card)] p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-transparent dark:border-[var(--card-border)]">
+            <div className="bg-white dark:bg-[var(--card)] p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-transparent dark:border-[var(--card-border)]" data-aos="fade-up" data-aos-delay="200">
               <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
                 Our team is a melting pot of talent: Amazon vets who've scaled brands from zero to hero, marketing wizards who craft viral campaigns, and tech whizzes building tools that simplify your life. United by a love for e-commerce, we're committed to your wins – big and small.
               </p>
@@ -163,9 +169,10 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 text-center bg-gradient-to-t from-gray-900 to-gray-950">
+      <section className="py-20 text-center bg-gradient-to-t
+       from-[#1fbfa4] to-[#178fe6]/80" data-aos="fade-up">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold text-orange-400 mb-6">Ready to Elevate Your Amazon Game?</h2>
+          <h2 className="text-4xl font-bold text-white mb-6">Ready to Elevate Your Amazon Game?</h2>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
             Join the Sellvate family and watch your business soar. Let's chat about how we can tailor our expertise to your unique needs.
           </p>

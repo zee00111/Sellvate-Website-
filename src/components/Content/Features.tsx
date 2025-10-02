@@ -2,7 +2,8 @@
 import { motion, useInView } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { UserIcon, ShoppingBagIcon, MegaphoneIcon, PackageIcon, StoreIcon, BarChartIcon } from "lucide-react";
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -54,17 +55,18 @@ export const Features = () => {
       initial={{ opacity: 0, y: 100 }}
       animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: "easeInOut" }}
-      className="py-20 bg-gradient-to-br from-orange-500 via-orange-400 to-orange-300 text-white font-poppins overflow-hidden"
+      className="py-20 bg-gradient-to-t
+       from-[#1fbfa4] to-[#178fe6]/80 text-white font-poppins overflow-hidden"
     >
-      <div className="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10 relative">
+      <div className="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10 relative" data-aos="fade-up">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent)] opacity-50 pointer-events-none"></div>
         
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up" >
           <motion.h2
             initial={{ opacity: 0, scale: 0.9, y: -30 }}
             animate={hasAnimated ? { opacity: 1, scale: 1, y: 0 } : {}}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-4xl text-black font-extrabold mb-6 tracking-wide drop-shadow-lg"
+            className="text-4xl text-white font-extrabold mb-6 tracking-wide drop-shadow-lg"
           >
             Elevate Your Amazon Empire with Sellvate
           </motion.h2>
@@ -72,7 +74,7 @@ export const Features = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-xl text-black max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-gray-00 max-w-3xl mx-auto leading-relaxed"
           >
             Unleash explosive growth, streamline operations, and dominate the marketplace with our cutting-edge Amazon services tailored for visionary sellers.
           </motion.p>

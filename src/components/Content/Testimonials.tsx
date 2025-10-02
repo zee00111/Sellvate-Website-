@@ -3,10 +3,12 @@ import React, { useState, useRef, useEffect } from "react";
 import { useSpring, useTransition, animated } from "react-spring";
 import { StarIcon } from "lucide-react";
 import Link from "next/link";
+  import Aos from "aos";
+  import "aos/dist/aos.css";
 
 export const Testimonials = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   const springProps = useSpring({
     from: { opacity: 0, y: 50 },
@@ -22,6 +24,7 @@ export const Testimonials = () => {
     config: { mass: 1, tension: 280, friction: 12 },
   });
 
+  // Enhanced testimonials data with dynamic/random avatars (using a mix of placeholders and Unsplash for variety)
   const testimonialsData = [
     {
       quote:
@@ -29,7 +32,7 @@ export const Testimonials = () => {
       name: "Alex Johnson",
       role: "CEO, EcoGoods",
       avatar:
-        "https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-1.png",
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
     },
     {
       quote:
@@ -37,7 +40,7 @@ export const Testimonials = () => {
       name: "Sarah Lee",
       role: "Founder, TechGadgets",
       avatar:
-        "https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-female.png",
+        "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
     },
     {
       quote:
@@ -45,21 +48,48 @@ export const Testimonials = () => {
       name: "Michael Torres",
       role: "Marketing Director, HomeEssentials",
       avatar:
-        "https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-2.png",
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    },
+    {
+      quote:
+        "“From SEO to creative content, Sellvate's team delivered results beyond expectations – highly recommend!”",
+      name: "Emily Chen",
+      role: "E-commerce Manager, FashionHub",
+      avatar:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+    },
+    {
+      quote:
+        "“Their analytics and growth strategies turned our stagnant store into a bestseller overnight.”",
+      name: "David Ramirez",
+      role: "Operations Lead, SportGear",
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+    },
+    {
+      quote:
+        "“Dedicated support and innovative tools from Sellvate made scaling our brand seamless and exciting.”",
+      name: "Lisa Wong",
+      role: "Brand Strategist, BeautyEssence",
+      avatar:
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&h=150&fit=crop&crop=face",
     },
   ];
 
+  // Shuffle for dynamic/random order on each load (optional: remove if you want fixed order)
+  const shuffledTestimonials = [...testimonialsData].sort(() => Math.random() - 0.5);
+
   return (
-    <section ref={ref} className="py-28 bg-gradient-to-br from-orange-50 to-amber-100/60 dark:from-[#0d1117] dark:to-[#0b0f14]">
+    <section ref={ref} className="py-28 bg-gradient-to-br from-[#1fbfa4]/20 to-[#178fe6]/30">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex flex-col items-center">
           <animated.div style={springProps}>
             <div className="text-center">
-              <p className="text-lg font-medium text-orange-700 dark:text-orange-400 font-pj">
+              <p className="text-lg font-medium text-[#1fbfa4] font-pj">
                 Hear From Our Satisfied Amazon Sellers
               </p>
               <h2 className="font-poppins mt-4 text-3xl font-bold sm:text-4xl xl:text-5xl">
-                <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-amber-500 inline-block text-transparent bg-clip-text">
+                <span className="bg-gradient-to-r from-[#1fbfa4] via-[#178fe6] to-[#1fbfa4] inline-block text-transparent bg-clip-text">
                   Client Testimonials
                 </span>
               </h2>
@@ -69,7 +99,7 @@ export const Testimonials = () => {
               <Link
                 href="#"
                 title=""
-                className="pb-2 text-base font-bold leading-7 text-orange-700 dark:text-orange-300 transition-all duration-200 border-b-2 border-orange-400/70 hover:border-orange-500 font-pj focus:outline-none focus:ring-1 focus:ring-orange-400 focus:ring-offset-2 hover:text-orange-800"
+                className="pb-2 text-base font-bold leading-7 text-[#1fbfa4] transition-all duration-200 border-b-2 border-[#1fbfa4]/70 hover:border-[#178fe6] font-pj focus:outline-none focus:ring-1 focus:ring-[#1fbfa4] focus:ring-offset-2 hover:text-[#178fe6]"
               >
                 Check all 1,500+ reviews
               </Link>
@@ -82,20 +112,20 @@ export const Testimonials = () => {
                 className="w-full h-full max-w-5xl mx-auto rounded-3xl opacity-30 blur-lg filter"
                 style={{
                   background:
-                    "linear-gradient(90deg, #f97316 -0.55%, #fb923c 22.86%, #f59e0b 48.36%, #fb923c 73.33%, #f97316 99.34%)",
+                    "linear-gradient(90deg, #1fbfa4 -0.55%, #178fe6 22.86%, #1fbfa4 48.36%, #178fe6 73.33%, #1fbfa4 99.34%)",
                 }}
               ></div>
             </div>
 
             <div className="relative grid max-w-lg grid-cols-1 gap-6 mx-auto md:max-w-none lg:gap-10 md:grid-cols-3">
-              {testimonialsData.map((testimonial, index) => {
+              {shuffledTestimonials.map((testimonial, index) => {
                 const isExpanded = expandedIndex === index;
                 const cardSpring = useSpring({
                   from: { scale: 1, boxShadow: "0 5px 15px rgba(0,0,0,0.08)" },
                   to: {
                     scale: isExpanded ? 1.05 : 1,
                     boxShadow: isExpanded
-                      ? "0 20px 35px rgba(249,115,22,0.25)"
+                      ? "0 20px 35px rgba(31,191,164,0.25)"
                       : "0 5px 15px rgba(0,0,0,0.08)",
                   },
                   config: { mass: 1, tension: 320, friction: 12 },
@@ -105,17 +135,17 @@ export const Testimonials = () => {
                   <animated.div
                     key={index}
                     style={cardSpring}
-                    onClick={() => setExpandedIndex(isExpanded ? null : index)}
-                    className="flex flex-col overflow-hidden cursor-pointer rounded-xl bg-white dark:bg-[var(--card)] border border-orange-100 dark:border-[var(--card-border)] transition-colors"
+                    onClick={() => setExpandedIndex(isExpanded ? null : index)} // Ensures only one expands
+                    className="flex flex-col overflow-hidden cursor-pointer rounded-xl bg-white/80 backdrop-blur-sm border border-[#1fbfa4]/30 hover:border-[#178fe6]/50 transition-all duration-300 hover:bg-white"
                   >
                     <div className="flex flex-col justify-between flex-1 p-6 lg:py-8 lg:px-7">
                       <div className="flex-1">
-                        <div className="flex items-center">
+                        <div className="flex items-center justify-center mb-4">
                           {[...Array(5)].map((_, starIndex) => (
                             <StarIcon
                               key={starIndex}
                               size={18}
-                              className="text-orange-500"
+                              className="text-[#1fbfa4]"
                             />
                           ))}
                         </div>
@@ -123,7 +153,7 @@ export const Testimonials = () => {
                         {transitions((styles, item) =>
                           item === index ? (
                             <animated.blockquote style={styles} className="flex-1 mt-8">
-                              <p className="text-lg leading-relaxed text-neutral dark:text-gray-300 font-pj">
+                              <p className="text-lg leading-relaxed text-gray-800 font-pj italic">
                                 {testimonial.quote}
                               </p>
                             </animated.blockquote>
@@ -133,15 +163,19 @@ export const Testimonials = () => {
 
                       <div className="flex items-center mt-8">
                         <img
-                          className="flex-shrink-0 object-cover rounded-full w-11 h-11"
+                          className="flex-shrink-0 object-cover rounded-full w-11 h-11 ring-2 ring-[#1fbfa4]/30"
                           src={testimonial.avatar}
-                          alt=""
+                          alt={testimonial.name}
+                          onError={(e) => {
+                            // Fallback to placeholder if image fails
+                            (e.target as HTMLImageElement).src = "https://via.placeholder.com/44x44?text=👤";
+                          }}
                         />
                         <div className="ml-4">
-                          <p className="text-base font-bold text-neutral dark:text-gray-100 font-pj">
+                          <p className="text-base font-bold text-gray-900 font-pj">
                             {testimonial.name}
                           </p>
-                          <p className="mt-0.5 text-sm font-pj text-gray-600 dark:text-gray-400">
+                          <p className="mt-0.5 text-sm font-pj text-gray-600">
                             {testimonial.role}
                           </p>
                         </div>
@@ -154,15 +188,16 @@ export const Testimonials = () => {
           </div>
 
           <div className="mt-16 md:mt-24 text-center">
-            <h3 className="text-2xl font-bold text-neutral dark:text-gray-100 mb-4">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Ready to see results like these?
             </h3>
-            <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-6">
+            <p className="text-gray-700 max-w-2xl mx-auto mb-6">
               Let’s talk about your goals and map out a tailored plan for your Amazon growth.
             </p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-3 bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold rounded-full shadow-lg transition-all duration-300 hover:from-orange-600 hover:to-amber-600 hover:shadow-xl"
+              className="inline-block px-8 py-3 bg-gradient-to-r from-[#1fbfa4] to-[#178fe6] 
+              text-white font-bold rounded-full shadow-lg transition-all duration-300 hover:from-[#178fe6] hover:to-[#1fbfa4] hover:shadow-xl"
             >
               Book a Free Consultation
             </Link>
@@ -174,7 +209,7 @@ export const Testimonials = () => {
 };
 
 export const TeamSection = () => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -207,10 +242,23 @@ export const TeamSection = () => {
     delay: 400,
   });
 
+  // Dynamic team members with random avatars
+  const teamMembers = [
+    { name: "John Doe", role: "CEO & Founder", avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face" },
+    { name: "Jane Smith", role: "Marketing Lead", avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face" },
+    { name: "Mike Johnson", role: "PPC Specialist", avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" },
+    { name: "Emily Davis", role: "Content Creator", avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face" },
+    { name: "Chris Wilson", role: "Analytics Expert", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" },
+    { name: "Lisa Brown", role: "Support Manager", avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" },
+  ];
+
+  // Shuffle for dynamic display
+  const shuffledTeam = [...teamMembers].sort(() => Math.random() - 0.5);
+
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-br from-orange-500 to-amber-600 text-white rounded-3xl mx-4 lg:mx-auto max-w-7xl overflow-hidden shadow-2xl">
+    <section ref={ref} className="py-20 bg-gradient-to-br from-[#1fbfa4] to-[#178fe6]/80 text-white rounded-3xl mx-4 lg:mx-auto max-w-7xl overflow-hidden shadow-2xl relative">
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-20"></div>
       <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="absolute inset-0 bg-[url('https://via.placeholder.com/1920x1080?text=Team+Background')] bg-cover bg-center opacity-30 filter blur-sm"></div>
         <div className="relative text-center py-16">
           <animated.h2
             style={springProps}
@@ -224,27 +272,54 @@ export const TeamSection = () => {
           >
             More than 45+ talented and happy employees
           </animated.p>
-          <animated.a
-            href="#"
-            style={buttonSpring}
-            className="inline-block px-8 py-3 bg-white text-orange-600 font-bold rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:bg-white hover:text-orange-500 active:scale-95"
-          >
-            MEET THE SELLVATE TEAM →
-          </animated.a>
         </div>
+
+        {/* Dynamic Team Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {shuffledTeam.map((member, index) => (
+            <animated.div
+              key={index}
+              style={{
+                ...springProps,
+                // delay: 200 + index * 100,
+              }}
+              className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center border border-white/20 hover:border-[#1fbfa4]/50 transition-all duration-300 hover:scale-105"
+            >
+              <img
+                className="w-20 h-20 mx-auto rounded-full ring-2 ring-white/30 mb-4"
+                src={member.avatar}
+                alt={member.name}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "https://via.placeholder.com/80x80?text=👤";
+                }}
+              />
+              <h3 className="text-lg font-bold mb-1">{member.name}</h3>
+              <p className="text-[#1fbfa4] font-medium">{member.role}</p>
+            </animated.div>
+          ))}
+        </div>
+
+        <animated.a
+          href="#"
+          style={buttonSpring}
+          className="inline-block px-8 py-3 bg-white text-[#1fbfa4] font-bold rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:bg-white hover:text-[#178fe6] active:scale-95 block mx-auto"
+        >
+          MEET THE FULL SELLVATE TEAM →
+        </animated.a>
       </div>
-       {/* CTA Section */}
-       <section className="py-20 text-center bg-gradient-to-t from-gray-900 to-gray-950">
+
+      {/* CTA Section (moved outside for better structure) */}
+      <section className="py-20 text-center bg-gradient-to-t from-[#1fbfa4] to-[#178fe6]/80">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-orange-400 mb-6">
+          <h2 className="text-4xl font-bold text-white mb-6">
             Ready to Elevate Your Amazon Business?
           </h2>
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+          <p className="text-white/90 max-w-2xl mx-auto mb-8 leading-relaxed">
             Let’s tailor a solution for your success. Contact us today for a free consultation!
           </p>
           <a
             href="/contact"
-            className="inline-block px-10 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg text-lg"
+            className="inline-block px-10 py-4 bg-white text-[#1fbfa4] font-bold rounded-full hover:bg-gray-100 hover:text-[#178fe6] transition-all duration-300 shadow-md hover:shadow-lg text-lg"
           >
             Get Started Now
           </a>

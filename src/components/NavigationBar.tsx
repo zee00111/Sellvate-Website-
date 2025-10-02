@@ -2,37 +2,10 @@
 import { motion } from "framer-motion";
 import { RocketIcon } from "lucide-react";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 export const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-
-  const applyTheme = (nextTheme: "light" | "dark") => {
-    setTheme(nextTheme);
-    if (typeof document !== "undefined") {
-      document.documentElement.setAttribute("data-theme", nextTheme);
-      // Optionally add a class for Tailwind dark variants
-      if (nextTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    }
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem("theme", nextTheme);
-    }
-  };
-
-  useEffect(() => {
-    const stored = typeof window !== "undefined" ? window.localStorage.getItem("theme") : null;
-    if (stored === "light" || stored === "dark") {
-      applyTheme(stored);
-      return;
-    }
-    const prefersDark = typeof window !== "undefined" && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    applyTheme(prefersDark ? "dark" : "light");
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -118,16 +91,6 @@ export const NavigationBar = () => {
           </ul>
         </div>
         <div className="navbar-end gap-2">
-          {/* Theme Toggle */}
-          {/* <button
-            type="button"
-            onClick={() => applyTheme(theme === "dark" ? "light" : "dark")}
-            className="btn btn-sm border-0 bg-white/20 hover:bg-white/30 text-white"
-            aria-label="Toggle theme"
-            title="Toggle theme"
-          >
-            {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
-          </button> */}
           {/* <a className="btn btn-orange-outline btn-sm">SignUp</a> */}
           <a className="btn btn-orange-outline btn-sm">Get Started</a>
         </div>

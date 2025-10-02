@@ -61,7 +61,7 @@ export const HowItWork = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-20 bg-gradient-to-br from-orange-500 via-orange-400 to-orange-300 text-black overflow-hidden"
+      className="py-20   text-gray-800 overflow-hidden"
     >
       <div className="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
         <div className="max-w-2xl mx-auto text-center mb-16">
@@ -89,7 +89,7 @@ export const HowItWork = () => {
             <motion.path
               d="M0 40 Q 200 -40 400 40 Q 600 140 800 40"
               fill="none"
-              stroke="rgba(255, 255, 255, 0.5)"
+              stroke="rgb(31, 191, 164)"
               strokeWidth="2"
               strokeDasharray="5,10"
               variants={pathVariants}
@@ -178,7 +178,7 @@ export const HowItWork = () => {
               <motion.p 
                 className="mt-4 text-base"
                 initial={{ opacity: 0 }}
-                animate={isInView ? { opacity: 20 } : {}}
+                animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 0.5, delay: 1.0 }}
               >
                 Deploy targeted PPC campaigns, track performance with advanced analytics, and scale for maximum ROI.

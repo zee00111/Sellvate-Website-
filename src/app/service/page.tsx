@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Services() {
   // State to track which service's details are expanded
@@ -24,7 +26,7 @@ export default function Services() {
       details:
         "Our full-service package covers every aspect of your Amazon operation, from account setup to performance optimization, with 24/7 expert support.",
       price: "Starting at $1,200/month",
-      icon: "https://img.icons8.com/ios-filled/100/f97316/combo-chart.png",
+      icon: "https://img.icons8.com/ios-filled/100/fa8b1b/combo-chart.png",
     },
     {
       title: "Amazon Advertising Management",
@@ -32,7 +34,7 @@ export default function Services() {
       details:
         "Leverage our PPC expertise to maximize ROI with targeted campaigns, keyword optimization, and ad performance tracking.",
       price: "Starting at $900/month",
-      icon: "https://img.icons8.com/ios-filled/100/f97316/gear.png",
+      icon: "https://img.icons8.com/ios-filled/100/fa8c1b/gear.png",
     },
     {
       title: "Demand-Side Platform (DSP) Advertising",
@@ -40,7 +42,7 @@ export default function Services() {
       details:
         "Unlock premium ad placements across Amazon and beyond with our DSP services, tailored for large-scale advertisers with a $15,000 minimum ad spend.",
       price: "10% of ad spend ($15,000 minimum)",
-      icon: "https://img.icons8.com/ios-filled/100/f97316/database.png",
+      icon: "https://img.icons8.com/ios-filled/100/ffbf0f/database.png",
     },
     {
       title: "Search Engine Optimization (SEO)",
@@ -48,7 +50,7 @@ export default function Services() {
       details:
         "Enhance your product visibility with our SEO strategies, including keyword research, listing optimization, and competitor analysis.",
       price: "Starting at $700/month",
-      icon: "https://img.icons8.com/ios-filled/100/f97316/search.png",
+      icon: "https://img.icons8.com/ios-filled/100/fa8b1b/search.png",
     },
     {
       title: "Compliance & Troubleshooting",
@@ -56,7 +58,7 @@ export default function Services() {
       details:
         "Stay ahead of Amazon policies with our compliance checks and resolve technical or account issues swiftly with our dedicated team.",
       price: "Starting at $500/month",
-      icon: "https://img.icons8.com/ios-filled/100/f97316/settings.png",
+      icon: "https://img.icons8.com/ios-filled/100/fa8c1b/settings.png",
     },
     {
       title: "Design & Creative Services",
@@ -64,14 +66,14 @@ export default function Services() {
       details:
         "From stunning product images to A+ content and branding, our creative team crafts visuals that convert and engage.",
       price: "Starting at $600/month",
-      icon: "https://img.icons8.com/ios-filled/100/f97316/paint-brush.png",
+      icon: "https://img.icons8.com/ios-filled/100/ffbf0f/paint-brush.png",
     },
   ];
 
   return (
-    <main className="min-h-screen  text-white">
+    <main className="min-h-screen text-white">
       {/* Hero Section */}
-      <section className="relative py-28 text-center overflow-hidden">
+      <section className="relative py-28 text-center overflow-hidden" data-aos="fade-up">
         <div className="absolute inset-0 blur-3xl" />
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <Image
@@ -81,18 +83,18 @@ export default function Services() {
             height={140}
             className="mx-auto mb-8 opacity-90"
           />
-           <motion.h2
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7 }}
-                className="mt-5 text-6xl leading-2 text-gray-900 dark:text-white sm:leading-tight md:text-6xl lg:text-6xl  font-poppins font-bold"
-              >
-              
-                <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 inline-block text-transparent bg-clip-text">
-                Our Expert Services
-                </span>
-              </motion.h2>
-              <br />
+          <motion.h2
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+            className="mt-5 text-6xl leading-2 text-gray-900 dark:text-white sm:leading-tight md:text-6xl lg:text-6xl  font-poppins font-bold"
+          >
+
+            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 inline-block text-transparent bg-clip-text">
+              Our Expert Services
+            </span>
+          </motion.h2>
+          <br />
           <p className="text-lg md:text-xl text-gray-900 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Unlock your Amazon potential with Sellvate’s specialized services, designed to drive growth,
             optimize performance, and enhance your brand presence.
@@ -101,9 +103,9 @@ export default function Services() {
       </section>
 
       {/* Services Grid Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-t from-gray-900 to-gray-950">
+      <section className="py-16 md:py-20" data-aos="fade-up" data-aos-delay="150">
         <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-orange-400 mb-10 md:mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-brand mb-10 md:mb-12 text-center">
             Discover Our Offerings
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -113,8 +115,9 @@ export default function Services() {
                 <motion.div
                   key={service.title}
                   layout
-                  className="bg-gray-800/80 dark:bg-[var(--card)] backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-orange-700/20 transition-all duration-300 border border-gray-700/60 dark:border-[var(--card-border)]"
+                  className="bg-white dark:bg-[var(--card)] backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-brand transition-all duration-300 border border-gray-200 dark:border-[var(--card-border)]"
                   whileHover={{ y: -2 }}
+                  data-aos="zoom-in"
                 >
                   <div className="flex justify-center mb-4">
                     <Image
@@ -125,16 +128,15 @@ export default function Services() {
                       className="transition-transform duration-300"
                     />
                   </div>
-                  <h3 className="text-2xl font-bold text-white dark:text-gray-100 mb-3 text-center">
+                  <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3 text-center">
                     {service.title}
                   </h3>
-                  <p className="text-gray-400 dark:text-gray-300 mb-5 text-center leading-relaxed">
+                  <p className="text-gray-600 dark:text-gray-300 mb-5 text-center leading-relaxed">
                     {service.description}
                   </p>
                   <button
                     onClick={() => toggleDetails(service.title)}
-                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full bg-orange
-                    text-orange-300 hover:bg-orange-900/50 hover:text-orange-600 transition-colors duration-200"
+                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full btn-brand"
                     aria-expanded={isOpen}
                     aria-controls={`details-${service.title}`}
                   >
@@ -157,9 +159,9 @@ export default function Services() {
                         transition={{ duration: 0.25 }}
                         className="mt-4 overflow-hidden"
                       >
-                        <div className="p-4 bg-gray-700/70 dark:bg-[var(--card)] rounded-lg text-gray-200 dark:text-gray-300 border border-gray-600/60 dark:border-[var(--card-border)]">
+                        <div className="p-4 bg-orange-50 dark:bg-[var(--card)] rounded-lg text-gray-700 dark:text-gray-300 border border-brand">
                           <p className="mb-2">{service.details}</p>
-                          <p className="text-orange-400 font-semibold">{service.price}</p>
+                          <p className="text-brand font-semibold">{service.price}</p>
                         </div>
                       </motion.div>
                     )}
@@ -172,9 +174,10 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 text-center bg-gradient-to-t from-gray-900 to-gray-950">
+      <section className="py-20 text-center bg-gradient-to-t
+       from-[#1fbfa4] to-[#178fe6]/80" data-aos="fade-up" data-aos-delay="250">
         <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-orange-400 mb-6">
+          <h2 className="text-4xl font-bold text-brand mb-6">
             Ready to Elevate Your Amazon Business?
           </h2>
           <p className="text-xl text-gray-300 mb-8 leading-relaxed">
@@ -182,7 +185,7 @@ export default function Services() {
           </p>
           <a
             href="/contact"
-            className="inline-block px-10 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-full hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg text-lg"
+            className="inline-block px-10 py-4  bg-orange-500 text-white font-bold rounded-full hover:bg-orange-600 transition-colors duration-300 text-lg shadow-md"
           >
             Get Started Now
           </a>
