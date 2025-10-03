@@ -129,7 +129,7 @@ export default function Contact() {
                 Let’s Scale Your Amazon Business Together
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Whether you’re launching your first product or expanding globally, our experts are ready to craft data-driven strategies that multiply your visibility, conversions, and revenue.
+                Whether you&apos;re launching your first product or expanding globally, our experts are ready to craft data-driven strategies that multiply your visibility, conversions, and revenue.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
