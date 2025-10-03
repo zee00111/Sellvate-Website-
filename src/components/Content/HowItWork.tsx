@@ -64,7 +64,7 @@ export const HowItWork = () => {
       className="py-20   text-gray-800 overflow-hidden"
     >
       <div className="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10">
-        <div className="max-w-2xl mx-auto text-center mb-16">
+        <div className="max-w-2xl mx-auto text-center mb-16" data-aos="fade-up" data-aos-delay="200">
           <motion.h2
             initial={{ opacity: 0, y: -30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -83,7 +83,7 @@ export const HowItWork = () => {
           </motion.p>
         </div>
 
-        <div className="relative mt-12 lg:mt-20">
+        <div className="relative mt-12 lg:mt-20" data-aos="fade-up" data-aos-delay="200">
           {/* Curved SVG Path for chain-like animation */}
           <svg className="absolute inset-x-0 hidden md:block top-0 md:px-20 lg:px-28 w-full h-28" viewBox="0 0 800 100" preserveAspectRatio="none">
             <motion.path
@@ -99,7 +99,7 @@ export const HowItWork = () => {
           </svg>
 
           <motion.div 
-            className="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12"
+            className="relative grid grid-cols-1 text-center gap-y-12 md:grid-cols-3 gap-x-12" data-aos="fade-up" data-aos-delay="600"
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
@@ -185,6 +185,25 @@ export const HowItWork = () => {
               </motion.p>
             </motion.div>
           </motion.div>
+
+
+
+            <motion.div 
+          className="mt-20 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 1.0 }}
+        >
+          <h3 className="text-2xl font-bold text-gray-800 mb-6">
+            Ready to Transform Your Amazon Business?
+          </h3>
+          <a
+            href="/contact"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-bold rounded-full hover:from-teal-600 hover:to-cyan-700 transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
+          >
+            Start Your Free Consultation
+          </a>
+        </motion.div>
         </div>
       </div>
     </section>

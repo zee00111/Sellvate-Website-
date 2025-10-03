@@ -3,165 +3,177 @@
 import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import {
+  BarChart3,
+  Rocket,
+  Database,
+  Search,
+  ShieldCheck,
+  Palette
+} from 'lucide-react';
+
+// Define TypeScript interface
+interface Service {
+  title: string;
+  description: string;
+  details: string;
+  price: string;
+  icon: JSX.Element;
+}
 
 export default function Services() {
-  // State to track which service's details are expanded
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
 
-  // Function to toggle details for a specific service
-  const toggleDetails = (serviceTitle: string) => {
-    setExpanded((prev) => ({
+  const toggleDetails = (title: string) => {
+    setExpanded(prev => ({
       ...prev,
-      [serviceTitle]: !prev[serviceTitle],
+      [title]: !prev[title]
     }));
   };
 
-  // Array of services with titles, descriptions, details, prices, and icons
-  const services = [
+  const services: Service[] = [
     {
       title: "Full-Service Management",
       description: "Complete Amazon business management with dedicated support across all channels.",
-      details:
-        "Our full-service package covers every aspect of your Amazon operation, from account setup to performance optimization, with 24/7 expert support.",
+      details: "Our full-service package covers every aspect of your Amazon operation, from account setup to performance optimization, with 24/7 expert support.",
       price: "Starting at $1,200/month",
-      icon: "https://img.icons8.com/ios-filled/100/fa8b1b/combo-chart.png",
+      icon: <BarChart3 className="text-teal-500" size={48} />
     },
     {
       title: "Amazon Advertising Management",
       description: "Expert PPC management for unprecedented growth and optimized ad spend.",
-      details:
-        "Leverage our PPC expertise to maximize ROI with targeted campaigns, keyword optimization, and ad performance tracking.",
+      details: "Leverage our PPC expertise to maximize ROI with targeted campaigns, keyword optimization, and ad performance tracking.",
       price: "Starting at $900/month",
-      icon: "https://img.icons8.com/ios-filled/100/fa8c1b/gear.png",
+      icon: <Rocket className="text-amber-500" size={48} />
     },
     {
       title: "Demand-Side Platform (DSP) Advertising",
       description: "Advanced DSP solutions for maximum control, higher margins, and invaluable data.",
-      details:
-        "Unlock premium ad placements across Amazon and beyond with our DSP services, tailored for large-scale advertisers with a $15,000 minimum ad spend.",
+      details: "Unlock premium ad placements across Amazon and beyond with our DSP services, tailored for large-scale advertisers with a $15,000 minimum ad spend.",
       price: "10% of ad spend ($15,000 minimum)",
-      icon: "https://img.icons8.com/ios-filled/100/ffbf0f/database.png",
+      icon: <Database className="text-cyan-500" size={48} />
     },
     {
       title: "Search Engine Optimization (SEO)",
       description: "Advanced solutions for boosting your Amazon search rankings.",
-      details:
-        "Enhance your product visibility with our SEO strategies, including keyword research, listing optimization, and competitor analysis.",
+      details: "Enhance your product visibility with our SEO strategies, including keyword research, listing optimization, and competitor analysis.",
       price: "Starting at $700/month",
-      icon: "https://img.icons8.com/ios-filled/100/fa8b1b/search.png",
+      icon: <Search className="text-orange-500" size={48} />
     },
     {
       title: "Compliance & Troubleshooting",
       description: "Ensure compliance and resolve issues with expert troubleshooting.",
-      details:
-        "Stay ahead of Amazon policies with our compliance checks and resolve technical or account issues swiftly with our dedicated team.",
+      details: "Stay ahead of Amazon policies with our compliance checks and resolve technical or account issues swiftly with our dedicated team.",
       price: "Starting at $500/month",
-      icon: "https://img.icons8.com/ios-filled/100/fa8c1b/settings.png",
+      icon: <ShieldCheck className="text-emerald-500" size={48} />
     },
     {
       title: "Design & Creative Services",
       description: "Elevate your brand with professional design and creative content.",
-      details:
-        "From stunning product images to A+ content and branding, our creative team crafts visuals that convert and engage.",
+      details: "From stunning product images to A+ content and branding, our creative team crafts visuals that convert and engage.",
       price: "Starting at $600/month",
-      icon: "https://img.icons8.com/ios-filled/100/ffbf0f/paint-brush.png",
-    },
+      icon: <Palette className="text-violet-500" size={48} />
+    }
   ];
 
   return (
-    <main className="min-h-screen text-white">
+    <main className="min-h-screen bg-gradient-to-b from-white to-amber-50 text-gray-900">
       {/* Hero Section */}
-      <section className="relative py-28 text-center overflow-hidden" data-aos="fade-up">
-        <div className="absolute inset-0 blur-3xl" />
-        <div className="relative z-10 max-w-4xl mx-auto px-4">
-          <Image
-            src="/sellvate.png"
-            alt="Sellvate Logo"
-            width={140}
-            height={140}
-            className="mx-auto mb-8 opacity-90"
-          />
-          <motion.h2
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
+      <section className="relative py-28 bg-gradient-to-br from-teal-500 via-cyan-600 to-blue-700 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-10"></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <div className="relative inline-block mb-8">
+            <div className="absolute -inset-4 bg-amber-400 rounded-full blur-xl opacity-30 animate-pulse"></div>
+            <Image
+              src="/sellvate.png"
+              alt="Sellvate Logo"
+              width={140}
+              height={140}
+              className="relative mx-auto opacity-95"
+            />
+          </div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="mt-5 text-6xl leading-2 text-gray-900 dark:text-white sm:leading-tight md:text-6xl lg:text-6xl  font-poppins font-bold"
+            className="text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-orange-400"
           >
-
-            <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-yellow-400 inline-block text-transparent bg-clip-text">
-              Our Expert Services
-            </span>
-          </motion.h2>
-          <br />
-          <p className="text-lg md:text-xl text-gray-900 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Unlock your Amazon potential with Sellvate’s specialized services, designed to drive growth,
-            optimize performance, and enhance your brand presence.
-          </p>
+            Our Expert Services
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.7 }}
+            className="text-lg md:text-xl mt-6 max-w-3xl mx-auto text-cyan-100 leading-relaxed"
+          >
+            Unlock your Amazon potential with Sellvate’s specialized services, designed to drive growth, optimize performance, and enhance your brand presence.
+          </motion.p>
         </div>
       </section>
 
-      {/* Services Grid Section */}
-      <section className="py-16 md:py-20" data-aos="fade-up" data-aos-delay="150">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-brand mb-10 md:mb-12 text-center">
+      {/* Services Grid */}
+      <section className="py-16 md:py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-800"
+          >
             Discover Our Offerings
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          </motion.h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => {
-              const isOpen = !!expanded[service.title];
+              const isOpen = expanded[service.title] || false;
               return (
                 <motion.div
                   key={service.title}
                   layout
-                  className="bg-white dark:bg-[var(--card)] backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-brand transition-all duration-300 border border-gray-200 dark:border-[var(--card-border)]"
-                  whileHover={{ y: -2 }}
-                  data-aos="zoom-in"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                  className="bg-white/80 backdrop-blur-sm rounded-3xl p-7 shadow-xl border border-amber-100/50 transition-all duration-300"
                 >
-                  <div className="flex justify-center mb-4">
-                    <Image
-                      src={service.icon}
-                      alt={`${service.title} Icon`}
-                      width={60}
-                      height={60}
-                      className="transition-transform duration-300"
-                    />
+                  <div className="flex justify-center mb-6">
+                    {service.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3 text-center">
+                  <h3 className="text-2xl font-bold text-center text-gray-800 mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-5 text-center leading-relaxed">
+                  <p className="text-gray-600 text-center mb-6 leading-relaxed">
                     {service.description}
                   </p>
+
                   <button
                     onClick={() => toggleDetails(service.title)}
-                    className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full btn-brand"
+                    className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold flex items-center justify-center gap-2 hover:from-amber-600 hover:to-orange-600 transition-all duration-300 shadow-md"
                     aria-expanded={isOpen}
-                    aria-controls={`details-${service.title}`}
                   >
-                    <span className="font-semibold">{isOpen ? "Hide Details" : "Learn More"}</span>
+                    {isOpen ? 'Hide Details' : 'Learn More'}
                     <motion.span
                       animate={{ rotate: isOpen ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      ➔
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
                     </motion.span>
                   </button>
 
-                  <AnimatePresence initial={false}>
+                  <AnimatePresence>
                     {isOpen && (
                       <motion.div
-                        id={`details-${service.title}`}
                         initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
+                        animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.25 }}
-                        className="mt-4 overflow-hidden"
+                        transition={{ duration: 0.3 }}
+                        className="mt-5 overflow-hidden"
                       >
-                        <div className="p-4 bg-orange-50 dark:bg-[var(--card)] rounded-lg text-gray-700 dark:text-gray-300 border border-brand">
-                          <p className="mb-2">{service.details}</p>
-                          <p className="text-brand font-semibold">{service.price}</p>
+                        <div className="p-5 bg-amber-50 rounded-xl border border-amber-200">
+                          <p className="text-gray-700 mb-3">{service.details}</p>
+                          <p className="font-bold text-amber-700">{service.price}</p>
                         </div>
                       </motion.div>
                     )}
@@ -174,21 +186,33 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 text-center bg-gradient-to-t
-       from-[#1fbfa4] to-[#178fe6]/80" data-aos="fade-up" data-aos-delay="250">
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-4xl font-bold text-brand mb-6">
+      <section className="py-20 bg-gradient-to-br from-teal-500 via-cyan-600 to-blue-700 text-white">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl font-bold mb-6"
+          >
             Ready to Elevate Your Amazon Business?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-xl text-cyan-100 mb-8 leading-relaxed"
+          >
             Let’s tailor a solution for your success. Contact us today for a free consultation!
-          </p>
-          <a
+          </motion.p>
+          <motion.a
             href="/contact"
-            className="inline-block px-10 py-4  bg-orange-500 text-white font-bold rounded-full hover:bg-orange-600 transition-colors duration-300 text-lg shadow-md"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block px-10 py-4 bg-gradient-to-r from-amber-400 to-orange-500 text-white font-bold rounded-full hover:from-amber-500 hover:to-orange-600 transition-all duration-300 text-lg shadow-lg"
           >
             Get Started Now
-          </a>
+          </motion.a>
         </div>
       </section>
     </main>

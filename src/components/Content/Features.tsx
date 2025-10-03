@@ -17,19 +17,19 @@ const containerVariants = {
 };
 
 const cardVariants = {
-  hidden: { 
-    opacity: 0, 
-    y: 50, 
+  hidden: {
+    opacity: 0,
+    y: 50,
     rotate: -5,
     scale: 0.95,
   },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
+  visible: {
+    opacity: 1,
+    y: 0,
     rotate: 0,
     scale: 1,
-    transition: { 
-      type: "spring", 
+    transition: {
+      type: "spring",
       stiffness: 100,
       damping: 20,
       duration: 0.6,
@@ -58,9 +58,9 @@ export const Features = () => {
       className="py-20 bg-gradient-to-t
        from-[#1fbfa4] to-[#178fe6]/80 text-white font-poppins overflow-hidden"
     >
-      <div className="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10 relative" data-aos="fade-up">
+      <div className="px-6 mx-auto max-w-7xl sm:px-8 lg:px-10 relative" data-aos="fade-up" data-aos-delay="200">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent)] opacity-50 pointer-events-none"></div>
-        
+
         <div className="text-center mb-16" data-aos="fade-up" >
           <motion.h2
             initial={{ opacity: 0, scale: 0.9, y: -30 }}
@@ -88,11 +88,11 @@ export const Features = () => {
         >
           <motion.div
             variants={cardVariants}
-            whileHover={{ 
-              scale: 1.05, 
-              rotate: 2, 
+            whileHover={{
+              scale: 1.05,
+              rotate: 2,
               boxShadow: "0 15px 30px rgba(0,0,0,0.2)",
-              transition: { duration: 0.4, ease: "easeInOut" } 
+              transition: { duration: 0.4, ease: "easeInOut" }
             }}
             whileTap={{ scale: 0.98 }}
             className="bg-white text-orange-500 p-8 rounded-2xl shadow-md cursor-pointer overflow-hidden relative group"
@@ -105,11 +105,11 @@ export const Features = () => {
 
           <motion.div
             variants={cardVariants}
-            whileHover={{ 
-              scale: 1.05, 
-              rotate: -2, 
+            whileHover={{
+              scale: 1.05,
+              rotate: -2,
               boxShadow: "0 15px 30px rgba(0,0,0,0.2)",
-              transition: { duration: 0.4, ease: "easeInOut" } 
+              transition: { duration: 0.4, ease: "easeInOut" }
             }}
             whileTap={{ scale: 0.98 }}
             className="bg-white text-orange-500 p-8 rounded-2xl shadow-md cursor-pointer overflow-hidden relative group"
@@ -122,11 +122,11 @@ export const Features = () => {
 
           <motion.div
             variants={cardVariants}
-            whileHover={{ 
-              scale: 1.05, 
-              rotate: 2, 
+            whileHover={{
+              scale: 1.05,
+              rotate: 2,
               boxShadow: "0 15px 30px rgba(0,0,0,0.2)",
-              transition: { duration: 0.4, ease: "easeInOut" } 
+              transition: { duration: 0.4, ease: "easeInOut" }
             }}
             whileTap={{ scale: 0.98 }}
             className="bg-white text-orange-500 p-8 rounded-2xl shadow-md cursor-pointer overflow-hidden relative group"
@@ -139,11 +139,11 @@ export const Features = () => {
 
           <motion.div
             variants={cardVariants}
-            whileHover={{ 
-              scale: 1.05, 
-              rotate: -2, 
+            whileHover={{
+              scale: 1.05,
+              rotate: -2,
               boxShadow: "0 15px 30px rgba(0,0,0,0.2)",
-              transition: { duration: 0.4, ease: "easeInOut" } 
+              transition: { duration: 0.4, ease: "easeInOut" }
             }}
             whileTap={{ scale: 0.98 }}
             className="bg-white text-orange-500 p-8 rounded-2xl shadow-md cursor-pointer overflow-hidden relative group"
@@ -156,11 +156,11 @@ export const Features = () => {
 
           <motion.div
             variants={cardVariants}
-            whileHover={{ 
-              scale: 1.05, 
-              rotate: 2, 
+            whileHover={{
+              scale: 1.05,
+              rotate: 2,
               boxShadow: "0 15px 30px rgba(0,0,0,0.2)",
-              transition: { duration: 0.4, ease: "easeInOut" } 
+              transition: { duration: 0.4, ease: "easeInOut" }
             }}
             whileTap={{ scale: 0.98 }}
             className="bg-white text-orange-500 p-8 rounded-2xl shadow-md cursor-pointer overflow-hidden relative group"
@@ -173,11 +173,11 @@ export const Features = () => {
 
           <motion.div
             variants={cardVariants}
-            whileHover={{ 
-              scale: 1.05, 
-              rotate: -2, 
+            whileHover={{
+              scale: 1.05,
+              rotate: -2,
               boxShadow: "0 15px 30px rgba(0,0,0,0.2)",
-              transition: { duration: 0.4, ease: "easeInOut" } 
+              transition: { duration: 0.4, ease: "easeInOut" }
             }}
             whileTap={{ scale: 0.98 }}
             className="bg-white text-orange-500 p-8 rounded-2xl shadow-md cursor-pointer overflow-hidden relative group"

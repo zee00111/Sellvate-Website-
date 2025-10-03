@@ -4,7 +4,7 @@ import { ClientsSection } from "@/components/Content/Clients";
 import { Features } from "@/components/Content/Features";
 import { HowItWork } from "@/components/Content/HowItWork";
 // import { Pricing } from "@/components/Content/Pricing";
-import { Testimonials } from "@/components/Content/Testimonials";
+import Testimonials from "@/components/Content/Testimonials";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

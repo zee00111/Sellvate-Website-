@@ -15,7 +15,9 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       fontFamily: {
-        poppins: ['"Poppins"', ...defaultTheme.fontFamily.sans],
+        'cal-sans': ['"Cal Sans"', ...defaultTheme.fontFamily.sans],
+        'dm-sans': ['"DM Sans"', ...defaultTheme.fontFamily.sans],
+        'trade-winds': ['"Trade Winds"', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         success: "#18c964",
