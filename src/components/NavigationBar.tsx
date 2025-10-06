@@ -34,6 +34,7 @@ export const NavigationBar = () => {
   const navItems = [
     { name: "Home", href: "/", icon: Home },
     { name: "Services", href: "/service", icon: Settings },
+    { name: "Case Studies", href: "/casestudy", icon: Rocket },
     { name: "About", href: "/about", icon: Users },
     { name: "Contact", href: "/contact", icon: Mail },
   ];

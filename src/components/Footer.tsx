@@ -12,7 +12,14 @@ export const Footer = () => {
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12">
           <div className="col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8">
-            <p className="text-base leading-relaxed text-gray-600 mt-7">
+       <a href="/" target="_blank" rel="noopener noreferrer">
+        <img
+              src="/sellvate.png"
+              alt="Sellvate"
+              className="h-20  w-auto"
+            />
+        </a>
+            <p className="text-base leading-relaxed text-gray-800 mt-7">
               Maximize your Amazon business growth with Sellvate. Expert digital marketing, analytics, and support for sellers who want to win on Amazon.
             </p>
 
@@ -43,61 +50,63 @@ export const Footer = () => {
             </ul>
           </div>
 
+
           <div>
-            <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">
-              Sellvate
+            <p className="text-sm font-semibold tracking-widest text-gray-800 uppercase">
+              Company
             </p>
             <ul className="mt-6 space-y-4">
               <li>
-                <a href="#" className="flex text-base text-black transition-all duration-200">About Sellvate</a>
+                <a href="/about" className="flex text-base text-black transition-all duration-200">About Sellvate</a>
               </li>
               <li>
-                <a href="#" className="flex text-base text-black transition-all duration-200">Amazon Services</a>
+                <a href="/service" className="flex text-base text-black transition-all duration-200">Amazon Services</a>
               </li>
               <li>
-                <a href="#" className="flex text-base text-black transition-all duration-200">Case Studies</a>
+                <a href="/casestudy" className="flex text-base text-black transition-all duration-200">Case Studies</a>
               </li>
-              <li>
+               <li>
+                <a href="/contact" className="flex text-base text-black transition-all duration-200">Contact us</a>
+              </li>
+              {/* Commenting out as requested */}
+              {/* <li>
                 <a href="#" className="flex text-base text-black transition-all duration-200">Careers</a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
           <div>
-            <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">
-              Help
+            <p className="text-sm font-semibold tracking-widest text-gray-800 uppercase">
+              Legal
             </p>
 
             <ul className="mt-6 space-y-4">
               <li>
                 <a
-                  href="#"
-                  title=""
+                  href="/terms"
+                  title="Terms and Conditions"
                   className="flex text-base text-black transition-all duration-200"
                 >
-                  {" "}
-                  Customer Support{" "}
+                  Terms and Conditions
                 </a>
               </li>
 
               <li>
                 <a
-                  href="#"
-                  title=""
+                  href="/privacy"
+                  title="Privacy Policy"
                   className="flex text-base text-black transition-all duration-200"
                 >
-                  {" "}
-                  Delivery Details{" "}
+                  Privacy Policy
                 </a>
               </li>
 
-              <li>
+              {/* <li>
                 <a
-                  href="#"
-                  title=""
+                  href="/contact"
+                  title="Contact Us"
                   className="flex text-base text-black transition-all duration-200"
                 >
-                  {" "}
                   Terms & Conditions{" "}
                 </a>
               </li>
@@ -111,12 +120,12 @@ export const Footer = () => {
                   {" "}
                   Privacy Policy{" "}
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
           <div className="col-span-2 md:col-span-1 lg:col-span-2 lg:pl-8">
-            <p className="text-sm font-semibold tracking-widest text-gray-400 uppercase">
+            <p className="text-sm font-semibold tracking-widest text-gray-800 uppercase">
               Subscribe to newsletter
             </p>
 
@@ -128,7 +137,7 @@ export const Footer = () => {
                   name="email"
                   id="email"
                   placeholder="Enter your email"
-                  className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
+                  className="block w-full p-4 text-black placeholder-gray-700 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
                 />
               </div>
 
@@ -139,10 +148,10 @@ export const Footer = () => {
           </div>
         </div>
 
-        <hr className="mt-16 mb-10 border-gray-200" />
+        <hr className="mt-16 mb-10 border-gray-800" />
 
-        <p className="text-sm text-center text-gray-600">
-          © {new Date().getFullYear()}, All Rights Reserved, Sellvate
+        <p className="text-sm text-center text-gray-800">
+          © {new Date().getFullYear()}, All Rights Reserved,<span className="text-orange-600"> Sellvate</span>
         </p>
       </div>
     </section>
