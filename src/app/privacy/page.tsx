@@ -1,7 +1,11 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
+
 'use client';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import lucide from 'lucide-react';
 import { useState } from 'react';
 
 // Inline SVG Icons
@@ -202,7 +206,7 @@ export default function PrivacyPage() {
           {/* Contact Section */}
           <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-8 border-b border-amber-200">
             <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
-              <MailIcon className="text-orange-600" />
+              <MailIcon />
               Contact Us
             </h2>
             <p className="text-gray-600 mb-4">
