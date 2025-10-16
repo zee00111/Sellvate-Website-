@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-<div align="center">
-
 # NextJS & DaisyUi SaaS Landing Page Template With Framer Motion
 
-!["MockUp"](https://raw.githubusercontent.com/mohitchandel/saas-landing-page/main/public/images/mockup/mockup.png)
-
-</div>
+![MockUp](https://github.com/zee00111/Sellvate-Website-/assets/137531146/f7285c35-a92a-4aa9-96f0-a3c0a53cc3a5)
 
 Welcome to the NextJS & Tailwind CSS SaaS Landing Page Template!
 
@@ -23,19 +18,15 @@ This SEO-friendly and visually stunning template is designed to revolutionize yo
 
 1. **Clone Repository**:
 
-   ```bash
-https://github.com/zee00111/Sellvate-Website-.git
-   ```
+   https://github.com/zee00111/Sellvate-Website-.git
 
 2. **Install Dependencies**:
-
    ```bash
    cd saas-landing-page
    npm install
    ```
 
 3. **Run Development Server**:
-
    ```bash
    npm run dev
    ```
@@ -54,9 +45,4 @@ If you find this template helpful and would like to support its development, con
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/mohitchandel)
 
----
-
 **Made with ❤️ by Zain Qureshi**
-=======
-# Sellvate-Website-
->>>>>>> 5c9b69daa23f3e9e0a18d1d0c195b66c30e20504
