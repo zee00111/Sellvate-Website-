@@ -1,3 +1,7 @@
+
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
+
 "use client";
 import { motion, useInView } from "framer-motion";
 import { Check } from "lucide-react";

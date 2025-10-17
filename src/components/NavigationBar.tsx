@@ -1,3 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
+
 'use client';
 
 import { motion } from "framer-motion";
@@ -34,6 +37,7 @@ export const NavigationBar = () => {
   const navItems = [
     { name: "Home", href: "/", icon: Home },
     { name: "Services", href: "/service", icon: Settings },
+    { name: "Case Studies", href: "/casestudy", icon: Rocket },
     { name: "About", href: "/about", icon: Users },
     { name: "Contact", href: "/contact", icon: Mail },
   ];
