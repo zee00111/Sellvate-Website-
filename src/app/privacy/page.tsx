@@ -1,11 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-
 'use client';
-
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import lucide from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import { useState } from 'react';
 
 // Inline SVG Icons
@@ -56,26 +54,6 @@ const DocumentIcon = () => (
   </svg>
 );
 
-const PhoneIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-  </svg>
-);
-
-const MailIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-    <polyline points="22,6 12,13 2,6" />
-  </svg>
-);
-
-const LocationIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-    <circle cx="12" cy="10" r="3" />
-  </svg>
-);
-
 export default function PrivacyPage() {
   const [expanded, setExpanded] = useState<string | null>(null);
 
@@ -96,13 +74,13 @@ export default function PrivacyPage() {
       icon: <DatabaseIcon />,
       content: (
         <>
-          <p>We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:</p>
+          We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:
           <ul className="list-disc pl-6 mt-2 space-y-1">
-            <li><strong>Identity Data</strong> includes first name, last name, username or similar identifier.</li>
-            <li><strong>Contact Data</strong> includes billing address, delivery address, email address and telephone numbers.</li>
-            <li><strong>Technical Data</strong> includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access this website.</li>
-            <li><strong>Usage Data</strong> includes information about how you use our website and services.</li>
-            <li><strong>Marketing and Communications Data</strong> includes your preferences in receiving marketing from us and our third parties and your communication preferences.</li>
+            <li>Identity Data includes first name, last name, username or similar identifier.</li>
+            <li>Contact Data includes billing address, delivery address, email address and telephone numbers.</li>
+            <li>Technical Data includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform, and other technology on the devices you use to access this website.</li>
+            <li>Usage Data includes information about how you use our website and services.</li>
+            <li>Marketing and Communications Data includes your preferences in receiving marketing from us and our third parties and your communication preferences.</li>
           </ul>
         </>
       )
@@ -113,7 +91,7 @@ export default function PrivacyPage() {
       icon: <ShieldIcon />,
       content: (
         <>
-          <p>We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:</p>
+          We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:
           <ul className="list-disc pl-6 mt-2 space-y-1">
             <li>To provide and maintain our services</li>
             <li>To notify you about changes to our services</li>
@@ -135,16 +113,16 @@ export default function PrivacyPage() {
     {
       id: "retention",
       title: "Data Retention",
-      icon: <DocumentIcon />,
+      icon: <DatabaseIcon />,
       content: "We will only retain your personal data for as long as necessary to fulfill the purposes we collected it for, including for the purposes of satisfying any legal, accounting, or reporting requirements."
     },
     {
       id: "rights",
       title: "Your Legal Rights",
-      icon: <UserIcon />,
+      icon: <ShieldIcon />,
       content: (
         <>
-          <p>Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to:</p>
+          Under certain circumstances, you have rights under data protection laws in relation to your personal data, including the right to:
           <ul className="list-disc pl-6 mt-2 space-y-1">
             <li>Request access to your personal data</li>
             <li>Request correction of your personal data</li>
@@ -163,7 +141,7 @@ export default function PrivacyPage() {
       icon: <CookieIcon />,
       content: (
         <>
-          <p>We use cookies and similar tracking technologies to track the activity on our service and hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier.</p>
+          We use cookies and similar tracking technologies to track the activity on our service and hold certain information. Cookies are files with a small amount of data which may include an anonymous unique identifier.
           <p className="mt-2">You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our service.</p>
         </>
       )
@@ -206,7 +184,7 @@ export default function PrivacyPage() {
           {/* Contact Section */}
           <div className="bg-gradient-to-r from-amber-50 to-orange-50 p-8 border-b border-amber-200">
             <h2 className="text-2xl font-bold text-gray-800 mb-4 flex items-center gap-3">
-              <MailIcon />
+              <Phone className="text-orange-600" />
               Contact Us
             </h2>
             <p className="text-gray-600 mb-4">
@@ -214,17 +192,20 @@ export default function PrivacyPage() {
             </p>
             <div className="space-y-3 text-gray-700">
               <div className="flex items-start gap-3">
-                <MailIcon className="text-orange-600 mt-1 flex-shrink-0" size={20} />
-                <a href="mailto:privacy@sellvate.com" className="text-orange-600 hover:text-orange-700 hover:underline">
+                <Mail className="text-orange-600 mt-1 flex-shrink-0" size={20} />
+                <a
+                  href="mailto:privacy@sellvate.com"
+                  className="text-orange-600 hover:text-orange-700 hover:underline"
+                >
                   privacy@sellvate.com
                 </a>
               </div>
               <div className="flex items-start gap-3">
-                <PhoneIcon className="text-orange-600 mt-1 flex-shrink-0" size={20} />
+                <Phone className="text-orange-600 mt-1 flex-shrink-0" size={20} />
                 <span>+1 (555) 123-4567</span>
               </div>
               <div className="flex items-start gap-3">
-                <LocationIcon />
+                <MapPin className="text-orange-600 mt-1 flex-shrink-0" size={20} />
                 <span>123 Business Avenue, Suite 100, New York, NY 10001</span>
               </div>
             </div>
@@ -252,7 +233,11 @@ export default function PrivacyPage() {
                     {section.title}
                   </h2>
                 </button>
-                <div className={`mt-4 pl-16 pr-4 transition-all duration-300 ${expanded === section.id ? 'opacity-100 max-h-96' : 'opacity-100 max-h-96'}`}>
+                <div
+                  className={`mt-4 pl-16 pr-4 transition-all duration-300 ${
+                    expanded === section.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+                  }`}
+                >
                   <div className="text-gray-600 leading-relaxed">
                     {section.content}
                   </div>
