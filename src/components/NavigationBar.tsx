@@ -1,8 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-
 'use client';
-
 import { motion } from "framer-motion";
 import { Menu, X, Home, Settings, Users, Mail, Rocket } from "lucide-react";
 import Link from "next/link";
@@ -57,61 +55,64 @@ export const NavigationBar = () => {
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2 focus:outline-none">
               <div className="relative w-10 h-10 rounded-lg overflow-hidden">
-                <img
+                                  <img 
                   src="/sellvate.png"
                   alt="Sellvate Logo"
-                  width={80}
-                  height={80}
-                  // className="object-cover"
+                  width={40}
+                  height={40}
+                  className="object-cover"
                 />
               </div>
-              <span className={`hidden md:block text-xl font-bold text-teal ${scrolled ? "text-gray-700" : "text-white"}`}>
-                SELLVATE
+              <span
+                className={`text-xl font-extrabold tracking-tight ${
+                  scrolled ? "text-orange-600" : "text-white"
+                }`}
+              >
+                Sellvate
               </span>
             </Link>
           </div>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-1">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-4 py-2 rounded-full font-medium transition-all duration-300 flex items-center gap-1.5 ${
+                className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
                   scrolled
                     ? "text-gray-700 hover:bg-orange-100 hover:text-orange-600"
                     : "text-white hover:bg-white/20"
                 }`}
               >
-                <item.icon size={16} />
                 {item.name}
               </Link>
             ))}
-          </div>
+          </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button (Desktop) */}
           <div className="hidden lg:block">
             <Link
               href="/contact"
-              className="px-5 py-2 bg-white text-orange-600 font-bold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2"
+              className={`inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-bold transition-all duration-300 ${
+                scrolled
+                  ? "bg-orange-600 text-white hover:bg-orange-700"
+                  : "bg-white text-orange-600 hover:bg-gray-100"
+              }`}
             >
               <Rocket size={18} />
               Get Started
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`p-2 rounded-md focus:outline-none ${
-                scrolled ? "text-gray-700" : "text-white"
-              }`}
-              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          {/* Mobile Menu Toggle */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-2 rounded-lg transition-all duration-300"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
 
@@ -143,7 +144,7 @@ export const NavigationBar = () => {
             </div>
             <nav className="space-y-6">
               {navItems.map((item) => (
-                <Link
+                                  <Link 
                   key={item.href}
                   href={item.href}
                   className="flex items-center gap-3 text-lg font-medium hover:text-amber-200 transition-colors"
@@ -155,7 +156,7 @@ export const NavigationBar = () => {
               ))}
             </nav>
             <div className="mt-10 pt-6 border-t border-white/20">
-              <Link
+                              <Link 
                 href="/contact"
                 className="inline-flex items-center gap-2 px-5 py-3 bg-white text-orange-600 font-bold rounded-full hover:bg-gray-100 transition-all"
                 onClick={() => setIsMenuOpen(false)}
